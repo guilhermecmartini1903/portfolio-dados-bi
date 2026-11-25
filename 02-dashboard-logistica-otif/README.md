@@ -1,6 +1,6 @@
 # Caso 02 — Torre de Controle de Transportes: Monitoramento Logístico e OTIF
 
-> **Navegação Interativa (Power BI):** [Acessar Portfólio Publicado](https://app.powerbi.com/view?r=eyJrIjoiN2I2ZDgwYzYtZTRkZC00YTNkLTllNzAtYzg2OTQ5NTRkYjM1IiwidCI6IjVjZWYyNWRiLTAyYmYtNDQ0ZS04YzVkLWI3ZjA0NzZkZTc1NyJ9)
+> **Navegação Interativa (Power BI):** [Acessar Portfólio Publicado](https://app.powerbi.com/view?r=eyJrIjoiYzY2OWExOGItOGZkNi00MGIzLThhYWItYzQ1ODNlMWE1ZTA5IiwidCI6IjVjZWYyNWRiLTAyYmYtNDQ0ZS04YzVkLWI3ZjA0NzZkZTc1NyJ9)
 
 ## 1. Contexto e Problema de Negócio
 Na operação de distribuição, acompanhar apenas o volume faturado não garante eficiência na ponta. A **Torre de Controle de Transportes** foi estruturada para responder a três perguntas operacionais entre **2021 e 2022**:
