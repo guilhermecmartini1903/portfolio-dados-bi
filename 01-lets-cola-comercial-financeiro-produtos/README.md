@@ -1,4 +1,4 @@
-# Case 01 — Lets-Cola Company: Inteligência Comercial, Financeira e de Portfólio
+# Caso 01 — Lets-Cola Company: Inteligência Comercial, Financeira e de Portfólio
 
 > **Navegação Interativa (Power BI):** [Acessar Portfólio Publicado] https://app.powerbi.com/view?r=eyJrIjoiYjcwZDJlNzEtNWVkZS00N2M2LThiNzItYTlkNmM2NTY2NTYwIiwidCI6IjVjZWYyNWRiLTAyYmYtNDQ0ZS04YzVkLWI3ZjA0NzZkZTc1NyJ9
 ## 1. Contexto e Problema de Negócio
