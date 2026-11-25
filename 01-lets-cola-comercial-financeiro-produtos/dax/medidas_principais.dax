@@ -1,0 +1,38 @@
+// --- MÉTRICAS FINANCEIRAS E COMERCIAIS ---
+
+Receita Total = 
+SUM(fVendas[valor_venda])
+
+Custo Total = 
+SUM(fVendas[custo_produto])
+
+Frete Total = 
+SUM(fVendas[valor_frete])
+
+Lucro Bruto = 
+[Receita Total] - [Custo Total]
+
+Margem % = 
+DIVIDE([Lucro Bruto], [Receita Total], 0)
+
+Total Pedidos = 
+DISTINCTCOUNT(fVendas[id_pedido])
+
+Total Clientes Ativos = 
+DISTINCTCOUNT(fVendas[id_cliente])
+
+// --- INTELIGÊNCIA DE TEMPO (YoY) ---
+
+Receita Ano Anterior = 
+CALCULATE(
+    [Receita Total],
+    SAMEPERIODLASTYEAR(dCalendario[data])
+)
+
+Crescimento YoY % = 
+DIVIDE([Receita Total] - [Receita Ano Anterior], [Receita Ano Anterior], 0)
+
+// --- SIMULADOR DE CENÁRIOS (WHAT-IF) ---
+
+Saving Projetado = 
+[Custo Total] * 'Parametro Reducao Custo'[Valor Parametro Reducao]
