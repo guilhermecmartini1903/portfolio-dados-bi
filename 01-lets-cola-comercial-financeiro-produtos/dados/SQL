@@ -1,0 +1,39 @@
+-- 1. Faturamento, Custo, Frete, Lucro e Margem por Ano
+SELECT
+    EXTRACT(YEAR FROM data_pedido) AS ano,
+    COUNT(DISTINCT id_pedido) AS total_pedidos,
+    SUM(valor_venda) AS receita_total,
+    SUM(custo_produto) AS custo_total,
+    SUM(valor_frete) AS frete_total,
+    SUM(valor_venda - custo_produto - valor_frete) AS lucro_liquido,
+    ROUND(
+        (SUM(valor_venda - custo_produto - valor_frete) / NULLIF(SUM(valor_venda), 0)) * 100,
+        2
+    ) AS margem_percentual
+FROM f_vendas
+GROUP BY 1
+ORDER BY 1;
+
+-- 2. Participação de Receita por Categoria de Produto (Pareto)
+SELECT
+    p.categoria,
+    SUM(v.valor_venda) AS faturamento_categoria,
+    ROUND(
+        SUM(v.valor_venda) * 100.0 / SUM(SUM(v.valor_venda)) OVER (),
+        2
+    ) AS share_receita_pct
+FROM f_vendas v
+INNER JOIN d_produtos p ON v.id_produto = p.id_produto
+GROUP BY p.categoria
+ORDER BY faturamento_categoria DESC;
+
+-- 3. Ranking de Supervisores e Vendedores por Faturamento
+SELECT
+    e.supervisor,
+    e.nome_vendedor,
+    SUM(v.valor_venda) AS total_vendido,
+    RANK() OVER (ORDER BY SUM(v.valor_venda) DESC) AS ranking_geral
+FROM f_vendas v
+INNER JOIN d_equipe_comercial e ON v.id_vendedor = e.id_vendedor
+GROUP BY e.supervisor, e.nome_vendedor
+ORDER BY ranking_geral;
