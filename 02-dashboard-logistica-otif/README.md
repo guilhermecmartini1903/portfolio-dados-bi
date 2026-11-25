@@ -1,4 +1,4 @@
-# Case 02 — Torre de Controle de Transportes: Monitoramento Logístico e OTIF
+# Caso 02 — Torre de Controle de Transportes: Monitoramento Logístico e OTIF
 
 > **Navegação Interativa (Power BI):** [Acessar Portfólio Publicado](https://app.powerbi.com/view?r=eyJrIjoiN2I2ZDgwYzYtZTRkZC00YTNkLTllNzAtYzg2OTQ5NTRkYjM1IiwidCI6IjVjZWYyNWRiLTAyYmYtNDQ0ZS04YzVkLWI3ZjA0NzZkZTc1NyJ9)
 
