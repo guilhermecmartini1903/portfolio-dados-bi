@@ -1,0 +1,7 @@
+id_pedido,data_pedido,id_cliente,grupo_cliente,estado,id_produto,produto,categoria,vendedor,supervisor,unidade_negocio,qtd_itens,valor_venda,custo_produto,valor_frete
+100451,2022-08-14,C0192,Pequeno Porte,SP,P01,Montain Excel 2L,Bebidas,Cecilia Castro,Marcela,Diamante,120,1080.00,480.00,42.50
+100452,2022-08-14,C0844,Tradicional,MG,P04,Data-Cola 350ml,Bebidas,Fabio Araujo,Marcela,Ametista,300,960.00,432.00,38.00
+100453,2022-08-15,C1102,Redes Regionais,PR,P12,Snack Salgado 90g,Snacks,Arthur Gabriel,Luciano,Rubi,150,675.00,310.50,29.10
+100454,2022-08-16,C0451,Atacados,RS,P08,Data-Cola 600ml,Bebidas,Lucas Carvalho,Mariana,Esmeralda,400,1680.00,756.00,64.00
+100455,2022-08-18,C2098,Food Services,RJ,P21,Cereal Matinal 300g,Matinais,Maria Alice,Joao,Topazio,80,720.00,360.00,31.20
+100456,2022-08-19,C0315,Atacarejo,SC,P33,Cha Gelado Limao 500ml,Chas,Maria Laura,Caroline,Diamante,200,840.00,403.20,35.80
