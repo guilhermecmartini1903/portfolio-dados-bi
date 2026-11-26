@@ -1,0 +1,6 @@
+num_nf,data_faturamento,data_previsao,data_entrega,transportadora,warehouse_origem,cliente,regiao,qtd_volumes,qtd_pedida,qtd_entregue,valor_nf,status_desvio
+NF-88410,2022-05-10,2022-05-14,2022-05-14,Cargo Centro Oeste,CD-SP01,Copercampos,Centro-Oeste,45,450,450,3850.00,Normal
+NF-88411,2022-05-11,2022-05-15,2022-05-17,RodoCarioca,CD-RJ02,Pic Petroleo,Sudeste,30,300,300,2940.00,Desvio Operacional
+NF-88412,2022-05-12,2022-05-16,2022-05-16,Gaucha Transportes,CD-RS01,Copersucar,Sul,60,600,600,5120.00,Normal
+NF-88413,2022-05-13,2022-05-18,2022-05-20,Paulistana,CD-SP01,Larco Distribuidora,Nordeste,25,250,240,2180.00,Desvio Operacional
+NF-88414,2022-05-14,2022-05-19,2022-05-19,RodoNordeste,CD-PE01,Petroleo Sabba,Norte,40,400,400,3490.00,Normal
