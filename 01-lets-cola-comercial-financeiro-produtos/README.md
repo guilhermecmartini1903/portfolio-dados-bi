@@ -49,7 +49,7 @@ O modelo segue o padrão de Esquema Estrela, separando os registros transacionai
                          |
                [ dEquipeComercial ]
 
-##5. Arquivos Técnicos do Projeto
+## 5. Arquivos Técnicos do Projeto
 * [Amostra de Dados (CSV)](./dados/amostra_fvendas.csv) e [Dicionário de Dados](./dados/dicionario_dados.md)
 * [Modelagem Dimensional (Star Schema)](./modelagem/star_schema.md)
 * [Consultas SQL Analíticas](./sql/analises_negocio.sql)
