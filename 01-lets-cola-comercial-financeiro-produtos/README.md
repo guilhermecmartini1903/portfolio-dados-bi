@@ -52,6 +52,6 @@ O modelo segue o padrão de Esquema Estrela, separando os registros transacionai
 ## 5. Arquivos Técnicos do Projeto
 * [Amostra de Dados (CSV)](./dados/amostra_fvendas.csv) e [Dicionário de Dados](./dados/dicionario_dados.md)
 * [Modelagem Dimensional (Star Schema)](./modelagem/star_schema.md)
-* [Consultas SQL Analíticas](./modelagem/sql)
+* [Consultas SQL Analíticas](./modelagem/SQL)
 * [Medidas DAX](./dax/medidas_principais.dax)
 * [Documentação de ETL (Power Query)](./documentacao/etl_power_query.md)
