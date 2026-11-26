@@ -1,0 +1,41 @@
+####  `sql/indicadores_otif.sql`
+```sql
+-- 1. Cálculo de OTD (% On Time e % Atraso) por Transportadora
+SELECT
+    transportadora,
+    COUNT(DISTINCT num_nf) AS total_nfs,
+    SUM(CASE WHEN data_entrega <= data_previsao THEN 1 ELSE 0 END) AS entregas_no_prazo,
+    ROUND(
+        SUM(CASE WHEN data_entrega <= data_previsao THEN 1 ELSE 0 END) * 100.0 / COUNT(DISTINCT num_nf),
+        2
+    ) AS otd_on_time_pct,
+    ROUND(
+        SUM(CASE WHEN data_entrega > data_previsao THEN 1 ELSE 0 END) * 100.0 / COUNT(DISTINCT num_nf),
+        2
+    ) AS atraso_pct
+FROM f_entregas
+GROUP BY transportadora
+ORDER BY atraso_pct DESC;
+
+-- 2. Índice OTIF Consolidado (On Time AND In Full)
+SELECT
+    ROUND(
+        SUM(
+            CASE
+                WHEN data_entrega <= data_previsao AND qtd_entregue >= qtd_pedida THEN 1
+                ELSE 0
+            END
+        ) * 100.0 / COUNT(DISTINCT num_nf),
+        2
+    ) AS otif_pct
+FROM f_entregas;
+
+-- 3. Impacto de Desvios Operacionais por Região
+SELECT
+    regiao,
+    status_desvio,
+    SUM(qtd_volumes) AS total_volumes,
+    SUM(valor_nf) AS valor_transportado
+FROM f_entregas
+GROUP BY regiao, status_desvio
+ORDER BY regiao, total_volumes DESC;
