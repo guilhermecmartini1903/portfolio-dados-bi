@@ -1,0 +1,53 @@
+// --- VOLUMETRIA E FATURAMENTO ---
+
+Notas Fiscais = 
+DISTINCTCOUNT(fEntregas[num_nf])
+
+Qtd Volumes = 
+SUM(fEntregas[qtd_volumes])
+
+Faturamento Transportado = 
+SUM(fEntregas[valor_nf])
+
+// --- INDICADORES DE SLA (OTD / IN FULL / OTIF) ---
+
+Entregas On Time = 
+CALCULATE(
+    [Notas Fiscais],
+    FILTER(fEntregas, fEntregas[data_entrega] <= fEntregas[data_previsao])
+)
+
+% On Time (OTD) = 
+DIVIDE([Entregas On Time], [Notas Fiscais], 0)
+
+% Atraso = 
+1 - [% On Time (OTD)]
+
+% In Full = 
+DIVIDE(
+    CALCULATE([Notas Fiscais], FILTER(fEntregas, fEntregas[qtd_entregue] >= fEntregas[qtd_pedida])),
+    [Notas Fiscais],
+    0
+)
+
+OTIF % = 
+DIVIDE(
+    CALCULATE(
+        [Notas Fiscais],
+        FILTER(
+            fEntregas,
+            fEntregas[data_entrega] <= fEntregas[data_previsao] &&
+            fEntregas[qtd_entregue] >= fEntregas[qtd_pedida]
+        )
+    ),
+    [Notas Fiscais],
+    0
+)
+
+// --- DESVIOS OPERACIONAIS ---
+
+Desvios Operacionais = 
+CALCULATE([Qtd Volumes], fEntregas[status_desvio] = "Desvio Operacional")
+
+% Desvios Operacionais = 
+DIVIDE([Desvios Operacionais], [Qtd Volumes], 0)
