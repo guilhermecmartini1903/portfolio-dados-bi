@@ -1,5 +1,5 @@
-#### 4. `sql/indicadores_otif.sql`
-```sql
+SQL
+
 -- 1. Cálculo de OTD (% On Time e % Atraso) por Transportadora
 SELECT
     transportadora,
